@@ -1,5 +1,9 @@
 package com.cuongpm.todoapp.data.local
 
+/**
+ * Created by cuongpm on 9/23/18.
+ */
+
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
