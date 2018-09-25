@@ -4,7 +4,7 @@ import com.cuongpm.todoapp.AppApplication
 import com.cuongpm.todoapp.di.module.ActivityBindingModule
 import com.cuongpm.todoapp.di.module.AppModule
 import com.cuongpm.todoapp.di.module.DatabaseModule
-import com.cuongpm.todoapp.di.module.RepositoryModule
+import com.cuongpm.todoapp.di.module.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [AndroidSupportInjectionModule::class, AppModule::class,
-    DatabaseModule::class, RepositoryModule::class, ActivityBindingModule::class])
+    DatabaseModule::class, ViewModelModule::class, ActivityBindingModule::class])
 interface AppComponent : AndroidInjector<AppApplication> {
 
     @Component.Builder

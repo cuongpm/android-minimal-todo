@@ -19,10 +19,10 @@ abstract class RepositoryModule {
     @Singleton
     @Binds
     @Local
-    abstract fun provideTasksLocalDataSource(localDataSource: TasksLocalDataSource): TasksDataSource
+    abstract fun bindTasksLocalDataSource(localDataSource: TasksLocalDataSource): TasksDataSource
 
     @Singleton
     @Binds
     @Remote
-    abstract fun provideTasksRemoteDataSource(remoteDataSource: TasksRemoteDataSource): TasksDataSource
+    abstract fun bindTasksRemoteDataSource(remoteDataSource: TasksRemoteDataSource): TasksDataSource
 }

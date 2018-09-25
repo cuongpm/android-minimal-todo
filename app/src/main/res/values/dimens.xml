@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // Padding size
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+
+    // Text size
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+
+    // View size
+    <dimen name="size_20">20dp</dimen>
+    <dimen name="size_30">30dp</dimen>
+
+</resources>

@@ -1,6 +1,6 @@
 package com.cuongpm.todoapp.ui.main.base
 
-import dagger.android.DaggerFragment
+import dagger.android.support.DaggerFragment
 
 /**
  * Created by cuongpm on 9/23/18.
