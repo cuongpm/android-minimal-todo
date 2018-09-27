@@ -1,4 +1,4 @@
-package com.cuongpm.todoapp.data
+package com.cuongpm.todoapp.di.qualifier
 
 import javax.inject.Qualifier
 
@@ -9,4 +9,4 @@ import javax.inject.Qualifier
 @Qualifier
 @MustBeDocumented
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Remote
+annotation class RemoteData

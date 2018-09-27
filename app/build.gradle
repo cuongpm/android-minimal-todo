@@ -37,7 +37,7 @@ dependencies {
     implementation "com.android.support:support-v4:$SUPPORT_PACKAGE_VERSION"
 
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$KOTLIN_VERSION"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
 
     // Life cycle
     implementation "android.arch.lifecycle:extensions:$ARCH_VERSION"

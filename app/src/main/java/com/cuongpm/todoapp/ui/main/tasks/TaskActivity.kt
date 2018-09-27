@@ -15,7 +15,7 @@ class TaskActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task)
 
-//        addFragment(R.id.content_frame, ::TaskFragment)
+        addFragment(R.id.content_frame, ::TaskFragment)
     }
 
 }

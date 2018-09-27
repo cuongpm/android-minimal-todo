@@ -1,5 +1,6 @@
 package com.cuongpm.todoapp.di.module
 
+import android.arch.lifecycle.ViewModelProvider
 import com.cuongpm.todoapp.util.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -14,5 +15,5 @@ abstract class ViewModelModule {
 
     @Singleton
     @Binds
-    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelFactory
+    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }

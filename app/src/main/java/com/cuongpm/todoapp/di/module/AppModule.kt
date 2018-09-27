@@ -1,7 +1,8 @@
 package com.cuongpm.todoapp.di.module
 
-import android.app.Application
 import android.content.Context
+import com.cuongpm.todoapp.AppApplication
+import com.cuongpm.todoapp.di.qualifier.ApplicationContext
 import dagger.Binds
 import dagger.Module
 
@@ -10,8 +11,10 @@ import dagger.Module
  */
 
 @Module
-internal abstract class AppModule {
+abstract class AppModule {
 
     @Binds
-    internal abstract fun bindContext(application: Application): Context
+    @ApplicationContext
+    abstract fun bindApplicationContext(application: AppApplication): Context
+
 }

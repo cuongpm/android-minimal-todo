@@ -1,7 +1,7 @@
 package com.cuongpm.todoapp.di.module
 
-import com.cuongpm.todoapp.data.Local
-import com.cuongpm.todoapp.data.Remote
+import com.cuongpm.todoapp.di.qualifier.LocalData
+import com.cuongpm.todoapp.di.qualifier.RemoteData
 import com.cuongpm.todoapp.data.local.TasksLocalDataSource
 import com.cuongpm.todoapp.data.remote.TasksRemoteDataSource
 import com.cuongpm.todoapp.data.repository.TasksDataSource
@@ -18,11 +18,11 @@ abstract class RepositoryModule {
 
     @Singleton
     @Binds
-    @Local
+    @LocalData
     abstract fun bindTasksLocalDataSource(localDataSource: TasksLocalDataSource): TasksDataSource
 
     @Singleton
     @Binds
-    @Remote
+    @RemoteData
     abstract fun bindTasksRemoteDataSource(remoteDataSource: TasksRemoteDataSource): TasksDataSource
 }
