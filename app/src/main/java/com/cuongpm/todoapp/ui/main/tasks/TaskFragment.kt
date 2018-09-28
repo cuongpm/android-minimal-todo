@@ -1,5 +1,7 @@
 package com.cuongpm.todoapp.ui.main.tasks
 
+import android.arch.lifecycle.ViewModelProvider
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,19 +19,24 @@ import javax.inject.Inject
 class TaskFragment @Inject constructor() : BaseFragment() {
 
     @Inject
-    lateinit var taskViewModel: TaskViewModel
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var dataBinding: FragmentTaskBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        dataBinding = FragmentTaskBinding.inflate(inflater, container, false).apply {
+            viewModel = ViewModelProviders.of(this@TaskFragment, viewModelFactory).get(TaskViewModel::class.java)
 
-        dataBinding = FragmentTaskBinding.inflate(inflater, container, false)
+        }
+
+        return dataBinding.root
     }
 
     override fun onResume() {
         super.onResume()
-        taskViewModel.start()
+        dataBinding.viewModel?.start()
+
+        dataBinding.viewModel?.updateLable("what the heck")
     }
 
 }

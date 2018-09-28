@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Minimal Todo</string>
+    <string name="task_empty">You have no tasks!</string>
 </resources>
