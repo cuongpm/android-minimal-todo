@@ -6,6 +6,7 @@ import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
 import com.cuongpm.todoapp.data.repository.TasksRepository
 import com.cuongpm.todoapp.di.qualifier.ApplicationContext
+import com.cuongpm.todoapp.util.SingleLiveEvent
 import javax.inject.Inject
 
 /**
@@ -21,6 +22,7 @@ class TaskViewModel @Inject constructor(
     val isLoading = ObservableBoolean(false)
     val isEmpty = ObservableBoolean(true)
     val myLable = ObservableField<String>()
+    val addTaskEvent = SingleLiveEvent<Void>()
 
     /**
      * Start [TaskViewModel] from [TaskFragment]
@@ -40,10 +42,7 @@ class TaskViewModel @Inject constructor(
      *  Add new task when clicking on FAB button
      */
     fun addNewTask() {
-        updateLable("goood good good")
+        addTaskEvent.call()
     }
 
-    fun updateLable(label: String) {
-        myLable.set(label)
-    }
 }

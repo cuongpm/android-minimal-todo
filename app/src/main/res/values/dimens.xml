@@ -4,6 +4,7 @@
     // Padding size
     <dimen name="padding_8">8dp</dimen>
     <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_32">32dp</dimen>
 
     // Text size
     <dimen name="text_16">16sp</dimen>
