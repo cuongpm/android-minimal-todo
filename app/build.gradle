@@ -6,12 +6,14 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'com.google.gms.google-services'
+
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.cuongpm.todoapp"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode VERSION_CODE as int
         versionName VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -35,6 +37,9 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$SUPPORT_PACKAGE_VERSION"
     implementation "com.android.support:design:$SUPPORT_PACKAGE_VERSION"
     implementation "com.android.support:support-v4:$SUPPORT_PACKAGE_VERSION"
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.4'
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
