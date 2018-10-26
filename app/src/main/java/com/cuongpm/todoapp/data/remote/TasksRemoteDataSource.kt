@@ -1,5 +1,6 @@
 package com.cuongpm.todoapp.data.remote
 
+import com.cuongpm.todoapp.data.local.TaskEntity
 import com.cuongpm.todoapp.data.repository.TasksDataSource
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -10,5 +11,8 @@ import javax.inject.Singleton
 
 @Singleton
 class TasksRemoteDataSource @Inject constructor() : TasksDataSource {
+
+    override fun saveTask(task: TaskEntity) {
+    }
 
 }

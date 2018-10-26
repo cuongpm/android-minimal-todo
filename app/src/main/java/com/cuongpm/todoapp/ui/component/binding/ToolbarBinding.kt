@@ -12,7 +12,18 @@ object ToolbarBinding {
 
     @BindingAdapter("onNavigationIconClick")
     @JvmStatic
-    fun onNavigationClicked(toolbar: Toolbar, data: Int) {
+    fun onNavigationIconClicked(toolbar: Toolbar, data: Int) {
+        toolbar.setNavigationOnClickListener {
+            with(it.context as BaseActivity) {
+                finish()
+            }
+        }
+
+    }
+
+    @BindingAdapter("onNavigationMenuClick")
+    @JvmStatic
+    fun onNavigationMenuClicked(toolbar: Toolbar, data: Int) {
         toolbar.setNavigationOnClickListener {
             with(it.context as BaseActivity) {
                 finish()

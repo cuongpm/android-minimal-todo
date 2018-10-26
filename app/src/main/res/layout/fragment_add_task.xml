@@ -35,13 +35,19 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Please add a new task"
+                android:paddingLeft="@dimen/padding_16"
+                android:paddingRight="@dimen/padding_16"
+                android:textSize="@dimen/text_18" />
+
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/padding_16"
-                android:gravity="center"
-                android:text="Please add a new task!!!"
-                android:textSize="@dimen/text_18" />
+                android:text="Save" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 

@@ -11,4 +11,7 @@ import javax.inject.Singleton
 @Singleton
 class TasksLocalDataSource @Inject constructor() : TasksDataSource {
 
+    override fun saveTask(task: TaskEntity) {
+    }
+
 }
