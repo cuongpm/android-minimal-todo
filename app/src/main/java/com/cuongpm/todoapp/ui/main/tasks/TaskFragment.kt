@@ -20,7 +20,7 @@ class TaskFragment @Inject constructor() : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         dataBinding = FragmentTaskBinding.inflate(inflater, container, false).apply {
-            viewModel = (activity as TaskActivity).viewModel
+            viewModel = (activity as TaskActivity).taskViewModel
         }
 
         return dataBinding.root

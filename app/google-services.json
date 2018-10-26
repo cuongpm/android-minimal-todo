@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "899828902036",
+    "firebase_url": "https://cuongpm-minimal-todo.firebaseio.com",
+    "project_id": "cuongpm-minimal-todo",
+    "storage_bucket": "cuongpm-minimal-todo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899828902036:android:eb1769a34ed1a930",
+        "android_client_info": {
+          "package_name": "com.cuongpm.todoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899828902036-2nmunh2ao88m6v5fib30hhtt0em8qofq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cuongpm.todoapp",
+            "certificate_hash": "357aeaf34ce7cfb629aa32b2c6e573a5deba9705"
+          }
+        },
+        {
+          "client_id": "899828902036-fd8iqiqehascvls02u0eug3cufgbnv49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtriQykovWCrIVXdSnMoftaApOUpwm74E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899828902036-fd8iqiqehascvls02u0eug3cufgbnv49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

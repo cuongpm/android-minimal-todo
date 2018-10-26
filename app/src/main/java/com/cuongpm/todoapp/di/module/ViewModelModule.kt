@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProvider
 import com.cuongpm.todoapp.di.ViewModelKey
 import com.cuongpm.todoapp.ui.main.addtask.AddTaskViewModel
 import com.cuongpm.todoapp.ui.main.taskdetail.TaskDetailViewModel
+import com.cuongpm.todoapp.ui.main.tasks.MenuViewModel
 import com.cuongpm.todoapp.ui.main.tasks.TaskViewModel
 import com.cuongpm.todoapp.util.ViewModelFactory
 import dagger.Binds
@@ -37,4 +38,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AddTaskViewModel::class)
     abstract fun bindAddTaskViewModel(viewModel: AddTaskViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MenuViewModel::class)
+    abstract fun bindMenuViewModel(viewModel: MenuViewModel): ViewModel
 }
