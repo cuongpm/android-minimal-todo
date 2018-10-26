@@ -24,18 +24,14 @@ class TaskActivity : BaseActivity() {
 
     lateinit var taskViewModel: TaskViewModel
 
-    lateinit var menuViewModel: MenuViewModel
+    private lateinit var menuViewModel: MenuViewModel
 
-    lateinit var dataBinding: ActivityTaskBinding
+    private lateinit var dataBinding: ActivityTaskBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_task)
 
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_task)
-//                .apply {
-//            menuViewModel = ViewModelProviders.of(this@TaskActivity, viewModelFactory).get(MenuViewModel::class.java)
-//        }
 
         dataBinding.viewModel = ViewModelProviders.of(this, viewModelFactory).get(MenuViewModel::class.java).apply {
             menuViewModel = this
@@ -50,6 +46,5 @@ class TaskActivity : BaseActivity() {
         addFragment(R.id.content_frame, ::TaskFragment)
     }
 
-    fun updateDrawerLayout() = menuViewModel.isOpenMenuLeft.set(!menuViewModel.isOpenMenuLeft.get())
-
+    override fun updateMenu() = menuViewModel.isOpenMenuLeft.set(!menuViewModel.isOpenMenuLeft.get())
 }
