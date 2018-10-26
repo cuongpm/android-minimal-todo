@@ -1,9 +1,10 @@
 package com.cuongpm.todoapp.ui.main.addtask
 
-import android.app.Application
 import android.arch.lifecycle.ViewModel
+import android.content.Context
 import android.databinding.ObservableField
 import com.cuongpm.todoapp.data.repository.TasksRepository
+import com.cuongpm.todoapp.di.qualifier.ApplicationContext
 import javax.inject.Inject
 
 /**
@@ -11,7 +12,7 @@ import javax.inject.Inject
  */
 
 class AddTaskViewModel @Inject constructor(
-        private val context: Application,
+        @ApplicationContext context: Context,
         private val tasksRepository: TasksRepository
 ) : ViewModel() {
 
