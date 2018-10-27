@@ -2,6 +2,7 @@ package com.cuongpm.todoapp
 
 import android.content.Context
 import com.cuongpm.todoapp.di.component.DaggerAppComponent
+import com.facebook.stetho.Stetho
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 
@@ -12,6 +13,13 @@ import dagger.android.DaggerApplication
 open class AppApplication : DaggerApplication() {
 
     lateinit var androidInjector: AndroidInjector<out DaggerApplication>
+
+    override fun onCreate() {
+        super.onCreate()
+
+        // Initialize Stetho
+        Stetho.initializeWithDefaults(this)
+    }
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
