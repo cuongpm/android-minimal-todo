@@ -41,9 +41,8 @@ class TaskAdapter(
         }
     }
 
-//    fun setData(networks: List<WifiResult>) {
-//        this.networks = networks
-//        notifyDataSetChanged()
-//    }
-
+    fun setData(tasks: List<TaskEntity>) {
+        this.tasks = tasks
+        notifyDataSetChanged()
+    }
 }
