@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cuongpm.todoapp.ui.main.tasks.MenuViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_sign_in_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_16"
+            android:onClick="@{() -> viewModel.googleSignIn()}"
+            android:text="Sign In"
+            android:visibility="@{viewModel.isGoogleSignedIn ? View.GONE : View.VISIBLE}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_16"
+            android:paddingRight="@dimen/padding_16"
+            android:visibility="@{viewModel.isGoogleSignedIn ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="@dimen/size_50"
+                android:layout_height="@dimen/size_50"
+                app:imageUrl="@{viewModel.googleUserAvatar}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/padding_16"
+                android:layout_marginRight="@dimen/padding_16"
+                android:layout_toLeftOf="@+id/btn_sign_out"
+                android:layout_toRightOf="@+id/iv_avatar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.googleUserName}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_16"
+                    tools:text="Cuong Pham" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_4"
+                    android:singleLine="true"
+                    android:text="@{viewModel.googleUserEmail}"
+                    tools:text="cuong.pham@mail.com" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_sign_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:onClick="@{() -> viewModel.googleSignOut()}"
+                android:text="Sign Out" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

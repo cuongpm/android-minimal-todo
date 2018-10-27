@@ -2,6 +2,7 @@
 <resources>
 
     // Padding size
+    <dimen name="padding_4">4dp</dimen>
     <dimen name="padding_8">8dp</dimen>
     <dimen name="padding_16">16dp</dimen>
     <dimen name="padding_32">32dp</dimen>
@@ -13,5 +14,7 @@
     // View size
     <dimen name="size_20">20dp</dimen>
     <dimen name="size_30">30dp</dimen>
+    <dimen name="size_40">40dp</dimen>
+    <dimen name="size_50">50dp</dimen>
 
 </resources>

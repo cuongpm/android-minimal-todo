@@ -15,4 +15,8 @@ abstract class TaskModule {
     @ContributesAndroidInjector
     abstract fun bindTaskFragment(): TaskFragment
 
+    @FragmentScoped
+    @ContributesAndroidInjector
+    abstract fun bindMenuFragment(): MenuFragment
+
 }

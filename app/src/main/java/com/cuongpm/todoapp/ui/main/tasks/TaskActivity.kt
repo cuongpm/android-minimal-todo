@@ -24,7 +24,7 @@ class TaskActivity : BaseActivity() {
 
     lateinit var taskViewModel: TaskViewModel
 
-    private lateinit var menuViewModel: MenuViewModel
+    lateinit var menuViewModel: MenuViewModel
 
     private lateinit var dataBinding: ActivityTaskBinding
 
@@ -44,6 +44,8 @@ class TaskActivity : BaseActivity() {
         }
 
         addFragment(R.id.content_frame, ::TaskFragment)
+
+        addFragment(R.id.menu_frame, ::MenuFragment)
     }
 
     override fun updateMenu() = menuViewModel.isOpenMenuLeft.set(!menuViewModel.isOpenMenuLeft.get())

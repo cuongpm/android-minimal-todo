@@ -10,7 +10,7 @@ import com.cuongpm.todoapp.ui.main.base.BaseActivity
 
 object ToolbarBinding {
 
-    @BindingAdapter("onNavigationIconClick")
+    @BindingAdapter("app:onNavigationIconClick")
     @JvmStatic
     fun onNavigationIconClicked(toolbar: Toolbar, data: Int) {
         toolbar.setNavigationOnClickListener {
@@ -21,7 +21,7 @@ object ToolbarBinding {
 
     }
 
-    @BindingAdapter("onNavigationMenuClick")
+    @BindingAdapter("app:onNavigationMenuClick")
     @JvmStatic
     fun onNavigationMenuClicked(toolbar: Toolbar, data: Int) {
         toolbar.setNavigationOnClickListener {
