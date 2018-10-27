@@ -19,7 +19,7 @@ import javax.inject.Inject
  */
 
 class MenuViewModel @Inject constructor(
-//        @ApplicationContext private val context: Context
+        @ApplicationContext private val context: Context
 ) : ViewModel() {
 
     lateinit var googleSignInClient: GoogleSignInClient
@@ -33,11 +33,7 @@ class MenuViewModel @Inject constructor(
     val isGoogleSignedIn = ObservableBoolean(false)
     val googleSignInEvent = SingleLiveEvent<Void>()
 
-    /**
-     * Set up Google options and Google client
-     */
     fun setupGoogleSignIn() {
-
         // Configure sign-in to request the user's ID, email address and basic profile
         val googleSignInOptions: GoogleSignInOptions = GoogleSignInOptions.Builder(
                 GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -46,11 +42,11 @@ class MenuViewModel @Inject constructor(
                 .build()
 
         // Build a GoogleSignInClient with above options
-//        googleSignInClient = GoogleSignIn.getClient(context, googleSignInOptions)
+        googleSignInClient = GoogleSignIn.getClient(context, googleSignInOptions)
 
         // Check existing Google sign in account
         // If the user is ready signed in the GoogleSignInAccount will be non-null
-//        googleSignInAccount = GoogleSignIn.getLastSignedInAccount(context)
+        googleSignInAccount = GoogleSignIn.getLastSignedInAccount(context)
         if (googleSignInAccount != null) {
             updateGoogleUserInfo(googleSignInAccount)
             // Sign in to update token
@@ -58,20 +54,11 @@ class MenuViewModel @Inject constructor(
         }
     }
 
-    /**
-     * Sign in with Google account
-     */
     fun googleSignIn() {
         googleSignInEvent.call()
     }
 
-    /**
-     * Completed sign in
-     *
-     * @param data Parse user's data from intent which is returned after signing in completed
-     */
     fun googleSignInCompleted(data: Intent?) {
-
         val task = GoogleSignIn.getSignedInAccountFromIntent(data)
         try {
             val account = task.getResult(ApiException::class.java)
@@ -84,34 +71,20 @@ class MenuViewModel @Inject constructor(
         }
     }
 
-    /**
-     * Sign out
-     */
     fun googleSignOut() {
         googleSignInClient.signOut().addOnCompleteListener {
             isGoogleSignedIn.set(false)
             googleSignInAccount = null
-
-            // Check permission for all wifi networks
-//            discoverNetworks()
         }
     }
 
-    /**
-     * Update user data after signing in our signing out
-     *
-     * @param account User's information
-     */
-    fun updateGoogleUserInfo(account: GoogleSignInAccount?) {
+    private fun updateGoogleUserInfo(account: GoogleSignInAccount?) {
         if (account != null) {
             googleSignInAccount = account
             googleUserName.set(account.displayName)
             googleUserEmail.set(account.email)
             googleUserAvatar.set(account.photoUrl.toString())
             isGoogleSignedIn.set(true)
-
-            // Check permission for all wifi networks
-//            discoverNetworks()
         }
     }
 }
