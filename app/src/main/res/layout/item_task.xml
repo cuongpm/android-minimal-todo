@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="task"
+            type="com.cuongpm.todoapp.data.local.TaskEntity" />
+
+        <!--<variable-->
+        <!--name="listener"-->
+        <!--type="com.brightgate.ui.component.callback.SelectNetworkListener"-->
+        <!--/>-->
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="hihihihihhhi" />
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_16"
+        android:paddingRight="@dimen/padding_16">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{task.title}" />
+    </LinearLayout>
+</layout>

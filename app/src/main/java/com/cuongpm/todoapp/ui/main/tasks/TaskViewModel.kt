@@ -2,8 +2,11 @@ package com.cuongpm.todoapp.ui.main.tasks
 
 import android.arch.lifecycle.ViewModel
 import android.content.Context
+import android.databinding.ObservableArrayList
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
+import android.databinding.ObservableList
+import com.cuongpm.todoapp.data.local.TaskEntity
 import com.cuongpm.todoapp.data.repository.TasksRepository
 import com.cuongpm.todoapp.di.qualifier.ApplicationContext
 import com.cuongpm.todoapp.util.SingleLiveEvent
@@ -23,6 +26,7 @@ class TaskViewModel @Inject constructor(
     val isEmpty = ObservableBoolean(true)
     val myLable = ObservableField<String>()
     val addTaskEvent = SingleLiveEvent<Void>()
+    val items: ObservableList<TaskEntity> = ObservableArrayList()
 
     /**
      * Start [TaskViewModel] from [TaskFragment]
