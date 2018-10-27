@@ -28,13 +28,20 @@ class TaskActivity : BaseActivity() {
 
     private lateinit var dataBinding: ActivityTaskBinding
 
+    companion object {
+        const val SIGN_IN_CODE: Int = 1001
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_task)
 
-        dataBinding.viewModel = ViewModelProviders.of(this, viewModelFactory).get(MenuViewModel::class.java).apply {
-            menuViewModel = this
+        menuViewModel = ViewModelProviders.of(this, viewModelFactory).get(MenuViewModel::class.java).apply {
+            dataBinding.viewModel = this
+            googleSignInEvent.observe(this@TaskActivity, Observer {
+                startActivityForResult(menuViewModel.googleSignInClient.signInIntent, SIGN_IN_CODE)
+            })
         }
 
         taskViewModel = ViewModelProviders.of(this, viewModelFactory).get(TaskViewModel::class.java).apply {
@@ -49,4 +56,12 @@ class TaskActivity : BaseActivity() {
     }
 
     override fun updateMenu() = menuViewModel.isOpenMenuLeft.set(!menuViewModel.isOpenMenuLeft.get())
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == SIGN_IN_CODE) {
+            menuViewModel.googleSignInCompleted(data)
+        }
+    }
 }
