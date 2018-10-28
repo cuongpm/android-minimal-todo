@@ -1,6 +1,6 @@
 # Minimal Todo
 
-[![CircleCI](https://circleci.com/gh/cuongpm/android-minimal-todo.svg?style=svg)](https://circleci.com/gh/cuongpm/android-minimal-todo)
+[![CircleCI](https://circleci.com/gh/cuongpm/android-minimal-todo.svg?style=svg)](https://circleci.com/gh/cuongpm/android-minimal-todo) [![codecov](https://codecov.io/gh/cuongpm/android-minimal-todo/branch/master/graph/badge.svg)](https://codecov.io/gh/cuongpm/android-minimal-todo)
 
 A to-do app with minimal features. It's simple and just enough for you to keep everything on track.
 
