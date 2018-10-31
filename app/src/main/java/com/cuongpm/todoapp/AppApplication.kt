@@ -1,6 +1,7 @@
 package com.cuongpm.todoapp
 
 import android.content.Context
+import android.support.multidex.MultiDex
 import com.cuongpm.todoapp.di.component.DaggerAppComponent
 import com.facebook.stetho.Stetho
 import dagger.android.AndroidInjector
@@ -23,6 +24,7 @@ open class AppApplication : DaggerApplication() {
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
+        MultiDex.install(this)
 
         androidInjector = DaggerAppComponent.builder().application(this).build()
     }
