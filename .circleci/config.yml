@@ -38,7 +38,7 @@ jobs:
 
       - run:
           name: Test report
-          command: ./gradlew test jacocoTestReport
+          command: ./gradlew build jacocoTestReport
 
       - run:
           name: Code Coverage
