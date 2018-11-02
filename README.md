@@ -4,6 +4,20 @@
 
 A to-do app with minimal features. It's simple and just enough for you to keep everything on track.
 
+## Roadmap
+
+- [x] Solid Architecture: MVVM, ViewModel, LiveData, Room, Dagger2
+- [x] Network module: Retrofit, RxJava, Moshi and Kotshi
+- [x] Continuous integration with Circle CI
+- [x] Test report and test coverage with: Jacoco and Codecov
+- [x] Design offline-first data layer
+- [x] Google sign in with Firebase authentication
+- [ ] Restful api with Firebase cloud functions
+- [ ] Complete all features
+- [ ] 100% test coverage
+- [ ] Deploy to Google Play
+- [ ] Write a series of blog on Medium
+
 ## Major technologies
 
 - Language: Kotlin
